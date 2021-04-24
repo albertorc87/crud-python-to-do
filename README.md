@@ -34,10 +34,16 @@ Activarlo en Linux/Mac:
 source env/Scripts/activate
 ```
 
-Por último para instarlar las dependencias hay que lanzar el siguiente comando:
+Para instarlar las dependencias hay que lanzar el siguiente comando:
 
 ```
 pip install -r requirements.txt
+```
+
+Por último para lanzar el proyecto:
+
+```
+python main.py
 ```
 
 ## Show your support
