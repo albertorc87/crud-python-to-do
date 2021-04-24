@@ -1,1 +1,2 @@
 prettytable==2.1.0
+pycodestyle==2.7.0

@@ -1,6 +1,7 @@
 import json
 from json.decoder import JSONDecodeError
 
+
 class Dummy:
 
     FILE_NAME = 'store/bbdd.json'
@@ -10,7 +11,7 @@ class Dummy:
         ddbb = cls.get_file()
 
         create_id = None
-        if not table in ddbb:
+        if table not in ddbb:
             create_id = 1
             ddbb[table] = []
 
@@ -21,12 +22,11 @@ class Dummy:
         ddbb[table].append(data)
         return cls.save_file(ddbb)
 
-
     @classmethod
     def update(cls, table, id, data):
         ddbb = cls.get_file()
 
-        if not table in ddbb:
+        if table not in ddbb:
             return False
 
         for row in ddbb[table]:
@@ -38,12 +38,11 @@ class Dummy:
 
         return False
 
-
     @classmethod
     def delete(cls, table, id):
         ddbb = cls.get_file()
 
-        if not table in ddbb:
+        if table not in ddbb:
             return False
 
         for row in ddbb[table]:
@@ -53,7 +52,6 @@ class Dummy:
                 return cls.save_file(ddbb)
 
         return False
-
 
     @classmethod
     def get_last_id(cls, table):
@@ -70,12 +68,10 @@ class Dummy:
     def get_all(cls, table):
         ddbb = cls.get_file()
 
-        if not table in ddbb:
+        if table not in ddbb:
             return []
 
         return ddbb[table]
-
-
 
     @classmethod
     def get_by(cls, table, where):
@@ -97,12 +93,11 @@ class Dummy:
 
         return valid_results
 
-
     @classmethod
     def get_by_id(cls, table, id):
         ddbb = cls.get_file()
 
-        if not table in ddbb:
+        if table not in ddbb:
             return {}
 
         rows = ddbb[table]
@@ -112,8 +107,6 @@ class Dummy:
                 return row
 
         return {}
-
-
 
     @classmethod
     def save_file(cls, ddbb):

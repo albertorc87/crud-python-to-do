@@ -2,17 +2,8 @@ from store.dummy import Dummy as ddbb
 from app.tasks.model import Model as TaskModel
 from prettytable import PrettyTable
 
+
 class Actions:
-
-    def __init__(self):
-        pass
-        # print('Instanciando actions')
-
-
-    def __del__(self):
-        pass
-        # print('Destruyendo actions')
-
 
     def create_task(self):
         print('Introduce el nombre de la tarea, pulsa enter para salir')
@@ -42,7 +33,6 @@ class Actions:
         else:
             print('Error al guardar la tarea')
 
-
     def list_tasks(self, where=None):
         rows = ddbb.get_by(TaskModel.TABLE_NAME, where)
 
@@ -58,7 +48,6 @@ class Actions:
 
         print(table)
 
-
     def get_id(self):
         id = (input() or None)
 
@@ -72,7 +61,6 @@ class Actions:
             return self.get_id()
 
         return id
-
 
     def delete_task(self):
         print('Introduce el id de la tarea que quieras actualizar o pulsa enter para salir')
@@ -89,7 +77,6 @@ class Actions:
             print('Tarea eliminada con éxito')
         else:
             print('Error al eliminar la tarea')
-
 
     def update_status_task(self):
         print('Introduce el id de la tarea que quieras actualizar o pulsa enter para salir')
@@ -120,7 +107,6 @@ class Actions:
             print('Tarea marcada como realizada con éxito')
         else:
             print('Error al marcar como realizada la tarea')
-
 
     def get_task_by_id(self, id):
         return ddbb.get_by_id(TaskModel.TABLE_NAME, id)

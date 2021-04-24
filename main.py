@@ -2,6 +2,7 @@ import os
 from app.tasks.actions import Actions
 from store.dummy import Dummy as dummy
 
+
 def welcome():
     print('MYADMIN TASKS V0.1 🔥')
     print('*' * 50)
@@ -18,6 +19,7 @@ def get_command():
     command = input()
     return command.upper()
 
+
 def validate_command(command, actions):
     if command == 'C':
         actions.create_task()
@@ -31,6 +33,7 @@ def validate_command(command, actions):
         os._exit(1)
     else:
         print('El comando introducido no es válido, por favor, inténtalo de nuevo')
+
 
 if __name__ == '__main__':
 

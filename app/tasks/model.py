@@ -1,5 +1,6 @@
 import datetime
 
+
 class Model:
 
     __id = 0
@@ -24,31 +25,25 @@ class Model:
         if updated_at is None:
             self.__updated_at = timestamp
 
-
     @property
     def id(self):
         return self.__id
-
 
     @property
     def task_name(self):
         return self.__task_name
 
-
     @property
     def created_at(self):
         return self.__created_at
-
 
     @property
     def updated_at(self):
         return self.__updated_at
 
-
     @property
     def is_done(self):
         return self.__is_done
-
 
     @id.setter
     def id(self, id):
@@ -59,13 +54,11 @@ class Model:
 
         self.__id = id
 
-
     @task_name.setter
     def task_name(self, task_name):
         if len(task_name) < 3 or len(task_name) > 50:
             raise ValueError(f'El nombre de la tarea debe tener como mínimo 3 caractares y un máximo de 50 caracteres, tamaño actual: {len(task_name)}')
         self.__task_name = task_name
-
 
     @is_done.setter
     def is_done(self, is_done):
