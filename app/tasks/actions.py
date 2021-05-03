@@ -44,7 +44,16 @@ class Actions:
             if table is None:
                 table = PrettyTable([key for key in row.keys()])
 
-            table.add_row(row.values())
+            values = []
+            for field in row.values():
+                if field is True:
+                    field = '✅'
+                elif field is False:
+                    field = ''
+
+                values.append(field)
+
+            table.add_row(values)
 
         print(table)
 

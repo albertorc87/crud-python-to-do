@@ -35,7 +35,7 @@ def validate_command(command, actions):
         print('El comando introducido no es válido, por favor, inténtalo de nuevo')
 
 
-if __name__ == '__main__':
+def run():
 
     actions = Actions()
 
@@ -53,3 +53,5 @@ if __name__ == '__main__':
 
         print('Pulsa intro para continuar...')
         input()
+
+run()
