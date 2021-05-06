@@ -119,15 +119,12 @@ class Dummy:
     def get_file(cls):
 
         try:
-            f = open(cls.FILE_NAME)
-            f.close()
+            with open(cls.FILE_NAME, mode='r', encoding='utf-8') as json_file:
+                try:
+                    ddbb = json.load(json_file)
+                except JSONDecodeError:
+                    raise Exception('Error to read DDBB')
+
+                return ddbb
         except IOError:
             raise Exception('DDBB not found')
-
-        with open(cls.FILE_NAME, mode='r', encoding='utf-8') as json_file:
-            try:
-                ddbb = json.load(json_file)
-            except JSONDecodeError:
-                raise Exception('Error to read DDBB')
-
-            return ddbb
